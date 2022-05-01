@@ -1,0 +1,43 @@
+html,
+body {
+  height: 100%;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+
+// font-family: 'Catamaran', sans-serif;
+// font-family: 'Caudex', serif;
+// font-family: 'Orbitron', sans-serif;
+
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Catamaran', sans-serif;
+  font-weight: 400;
+  font-size: 100px;
+  font-style: normal;
+  line-height: 1.4;
+  background-image: $bg;
+  color: #fff;
+}
+
+main {
+  flex-grow: 1;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 1320px;
+}
