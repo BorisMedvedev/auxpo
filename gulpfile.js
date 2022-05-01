@@ -110,7 +110,7 @@ function cleanDist() {
 }
 
 function watching() {
-  watch(["app/icons/**/*.svg"], svg);
+  watch(["app/images/icons/**/*.svg"], svg);
   watch(["app/scss/**/*.scss"], styles);
   watch(["app/js/**/*.js", "!app/js/main.min.js"], scripts);
   watch(["app/**/*.html"]).on("change", browserSync.reload);
