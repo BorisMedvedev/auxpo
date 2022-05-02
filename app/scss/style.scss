@@ -10,6 +10,9 @@
     grid-template-columns: 110px 1fr;
     grid-template-rows: 98px 1fr;
     height: 100%;
+    @include r(968) {
+        grid-template-columns: 60px 1fr;
+    }
 }
 
 .sidebar {
@@ -26,6 +29,9 @@
         width: 100%;
         height: 98px;
         background: linear-gradient(127.44deg, #505050 0%, #383838 100%);
+        @include r(968) {
+            height: 60px;
+        }
     }
 
     &__btn {
@@ -39,6 +45,12 @@
         justify-content: space-between;
         cursor: pointer;
         transition: transform 330ms ease-out;
+        @include r(968) {
+            top: 17px;
+            left: 18px;
+            width: 25px;
+            height: 25px;
+        }
 
         .line {
             background-color: #fff;
@@ -112,6 +124,9 @@
     padding: 50px 70px 0 60px;
     grid-column: 2/3;
     grid-row: 1/2;
+    @include r(968) {
+        padding: 18px 0 0 15px;
+    }
 
     &__inner {
         display: flex;
@@ -124,6 +139,9 @@
     &__list {
         display: flex;
         align-items: center;
+        @include r(968) {
+            display: none;
+        }
     }
 
     &__item {
@@ -184,6 +202,9 @@
     .swiper {
         height: calc(100vh - 98px);
         flex-direction: row-reverse;
+        @include r(968) {
+            height: calc(100vh - 60px);
+        }
     }
 
     .swiper-pagination-vertical.swiper-pagination-bullets,
@@ -193,6 +214,11 @@
         position: absolute;
         width: 203px;
         flex-basis: 203px;
+        @include r(968) {
+            left: 15px;
+            width: 150px;
+            flex-basis: 150px;
+        }
     }
     .swiper-wrapper {
         position: inherit;
@@ -214,11 +240,29 @@
     }
     .swiper__body-img {
         position: absolute;
-        max-width: 690px;
-        width: 100%;
+        width: 40%;
         left: 20%;
-        bottom: 0;
+        bottom: -30px;
         z-index: -1;
+        @include r(1340) {
+            width: 40%;
+            left: 14%;
+        }
+        @include r(968) {
+            width: 55%;
+            left: 0;
+            opacity: 0.5;
+        }
+        @include r(760) {
+            width: 70%;
+            bottom: 150px;
+        }
+        @include r(460) {
+            width: 95%;
+        }
+        @include r(320) {
+            width: 100%;
+        }
     }
 
     .swiper-pagination-bullet span {
@@ -227,11 +271,20 @@
     .swiper-pagination-bullet span:first-child {
         font-weight: 600;
         font-size: 22px;
+        @include r(968) {
+            font-size: 18px;
+        }
+        @include r(460) {
+            display: none;
+        }
     }
     .swiper-pagination-bullet span:last-child {
         font-weight: 600;
         font-size: 17px;
         color: #bcbcbc;
+        @include r(460) {
+            display: none;
+        }
     }
 
     .swiper-slide__footer {
@@ -243,14 +296,20 @@
         left: 0;
         bottom: 0;
         width: 100%;
-        height: 225px;
         background: linear-gradient(
             270deg,
-            rgba(66, 66, 66, 0.49) 0%,
-            rgba(66, 66, 66, 0.4753) 76.04%,
+            rgba(66, 66, 66, 0.49) 20%,
+            rgba(66, 66, 66, 0.4753) 80%,
             rgba(66, 66, 66, 0) 100%
         );
-        backdrop-filter: blur(47.2917px);
+        backdrop-filter: blur(100px);
+        @include r(968) {
+            max-height: 180px;
+            padding-top: 10px;
+        }
+        @include r(680) {
+            padding: 25px 0 25px 15px;
+        }
     }
     .swiper-slide__footer-info {
         padding-left: 50px;
@@ -259,6 +318,17 @@
         grid-template-rows: auto 1fr;
         gap: 5%;
         flex-basis: calc(100% - 360px);
+        @include r(1200) {
+            padding-left: 15px;
+            grid-template-columns: repeat(1fr);
+            grid-template-rows: 30px 1fr;
+            flex-basis: calc(100% - 250px);
+        }
+        @include r(968) {
+            grid-template-rows: 15px 1fr;
+            flex-basis: calc(100% - 240px);
+            padding-bottom: 40px;
+        }
     }
     .swiper-slide__footer-title {
         grid-column: 1/6;
@@ -267,6 +337,10 @@
         font-weight: 700;
         font-size: 22px;
         letter-spacing: 0.05em;
+        @include r(968) {
+            margin: 0;
+            font-size: 16px;
+        }
     }
 
     .swiper-slide__footer-item {
@@ -275,6 +349,13 @@
         font-size: 18px;
         line-height: 21px;
         letter-spacing: 0.05em;
+        @include r(1200) {
+            font-size: 12px;
+        }
+        @include r(680) {
+            font-size: 11px;
+            display: none;
+        }
     }
     .swiper-slide__footer-item span {
         display: block;
@@ -284,6 +365,12 @@
         line-height: 28px;
         letter-spacing: 0.05em;
         color: #bcbcbc;
+        @include r(1200) {
+            font-size: 12px;
+        }
+        @include r(968) {
+            font-size: 11px;
+        }
     }
     .swiper-slide__footer-item-num {
         margin-top: 12px;
@@ -292,23 +379,39 @@
         position: absolute;
         right: 0;
         top: 0;
-        width: 225px;
+        max-width: 225px;
         height: 100%;
     }
 
     .swiper-pagination-vertical.swiper-pagination-bullets .swiper-pagination-bullet,
     .swiper-vertical > .swiper-pagination-bullets .swiper-pagination-bullet {
         margin: 45px 0 45px 0;
+        @include r(968) {
+            margin: 5px 0 5px 0;
+            font-size: 20px;
+        }
     }
 
     .swiper-pagination-vertical.swiper-pagination-bullets,
     .swiper-vertical > .swiper-pagination-bullets {
         top: 285px;
+        @include r(968) {
+            top: 135px;
+            left: 65%;
+        }
+        @include r(460) {
+            top: 60px;
+            left: 80%;
+        }
     }
 
     .swiper__body {
         margin-left: 65%;
         padding-top: 5%;
+        @include r(968) {
+            font-size: 20px;
+            margin-left: 15px;
+        }
     }
     .swiper__body-title {
         padding: 0;
@@ -316,8 +419,21 @@
         max-width: 360px;
         font-family: "Caudex", sans-serif;
         font-weight: 700;
-        font-size: 45.4px;
+        font-size: 46px;
         letter-spacing: 0.005em;
+        @include r(1200) {
+            font-size: 30px;
+        }
+        @include r(968) {
+            max-width: 250px;
+        }
+        @include r(680) {
+            font-size: 22px;
+        }
+        @include r(460) {
+            font-size: 20px;
+            max-width: 200px;
+        }
     }
 
     .swiper__body-title span {
@@ -326,6 +442,20 @@
     .swiper__body-title span::before,
     .swiper__body-title span::after {
         content: "3D printed";
+        position: absolute;
+        display: block;
+        width: 100%;
+    }
+    .swiper__body-title.get span::before,
+    .swiper__body-title.get span::after {
+        content: "10 000";
+        position: absolute;
+        display: block;
+        width: 100%;
+    }
+    .swiper__body-title.twitter span::before,
+    .swiper__body-title.twitter span::after {
+        content: "Twitter";
         position: absolute;
         display: block;
         width: 100%;
@@ -352,6 +482,10 @@
         font-size: 20px;
         letter-spacing: 0.065em;
         color: #bcbcbc;
+        @include r(968) {
+            font-size: 16px;
+            max-width: 200px;
+        }
     }
 
     .swiper__body-btn {
@@ -362,6 +496,15 @@
         font-weight: 700;
         font-size: 18px;
         transition: 0.2s;
+        @include r(1200) {
+            margin-bottom: 20px;
+            display: block;
+            width: 250px;
+            margin-right: 15px;
+        }
+        @include r(968) {
+            width: 150px;
+        }
 
         &--buy {
             margin-right: 30px;
@@ -405,6 +548,9 @@
             border: 1px solid #fff;
             color: #fff;
             transition: 0.2s;
+            @include r(1200) {
+                padding: 12px 2px 10px 50px;
+            }
             &:hover {
                 background-color: #fff;
                 color: #252525;
