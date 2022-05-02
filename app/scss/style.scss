@@ -9,7 +9,7 @@
     display: grid;
     grid-template-columns: 110px 1fr;
     grid-template-rows: 98px 1fr;
-    height: 100%;
+    height: 100vh;
     @include r(968) {
         grid-template-columns: 60px 1fr;
     }
@@ -203,7 +203,7 @@
         height: calc(100vh - 98px);
         flex-direction: row-reverse;
         @include r(968) {
-            height: calc(100vh - 60px);
+            height: 88vh;
         }
     }
 
@@ -255,7 +255,7 @@
         }
         @include r(760) {
             width: 70%;
-            bottom: 150px;
+            bottom: 42px;
         }
         @include r(460) {
             width: 95%;
